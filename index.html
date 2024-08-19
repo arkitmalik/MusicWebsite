@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        html, body{
+            line-height: 1.4;
+            font-weight: 300;
+            font-family: Arial, Helvetica, sans-serif;
+            scroll-behavior: smooth;
+        }
+        section{
+            scroll-margin: 50px;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        .container{
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header{
+           background-color:#270082; 
+           position: sticky;
+           top: 0;
+           z-index: 100;
+           box-shadow: 5px 5px 4px 4px blue;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center ;
+            color: white;
+            padding: 15px;
+        }
+        .logo{
+            font-size: 32px;
+            font-weight: 600;
+        }
+        button{
+            padding: 10px 10px;
+            border: npne;
+            transition: 0.2s ease-in-out;
+        }
+        button:hover{
+            transition: 0.2s ease-in-out;
+            opacity: 0.8;
+        }
+        nav ul{
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li{
+            border-bottom: 2px solid transparent; 
+            transition: 0.2s ease-in;
+        }
+        nav ul li:hover{
+            border-bottom: 2px solid white;
+            transition: 0.2s ease-in;
+        }
+        .hero_section{
+            background-image: url(hero.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: grid;
+            color: white;
+            place-items: center;
+            text-align: center;
+        }
+        .hero_section .container{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .hero_section h1{
+            font-size: 96px;
+        }
+        .hero_section h3{
+            font-size: 32px;
+        }
+        .music_section{
+            padding-top: 50px;
+            background-color: #281154;
+            color: white;
+        }
+        .music_section .container{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+        }
+        .ipad-iphon-img{
+            margin-top:-400px;
+            position: relative;
+            top: 400px;
+
+        }
+        .primary-btn{
+            background-color: orange;
+            color: white;
+        }
+        .secondary-btn{
+            background-color: #270082;
+            color: white;
+        }
+        .adout-music {
+            padding-top: 500px;
+            display: grid;
+            place-items: center;
+            gap: 50px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+        .video-section{
+           
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 20px;
+            margin: 20px;
+            min-height: 800px;
+            display: grid;
+            place-items: center;
+            color: white;
+            text-align: center;
+        }
+        .video-section.container{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: -200px;
+        }
+        .video-section.hero_section{
+             position: relative;
+             background-position: center;
+             background-size: cover;
+             background-repeat: no-repeat;
+        }
+        .gift-section{
+            display: flex;
+            justify-content: center;
+            margin: 100px 0;
+            gap: 50px;
+            background-color: white;
+        }
+        .gift-content{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 30px;
+            background-color: white;
+        }
+        .footer-upper{
+            background-color: blue;
+            padding: 20px;
+        }
+        .footer-upper .container{
+            display: flex;
+            color: white;
+            justify-content: space-between;
+        }
+        .footer-upper h4{
+            padding-bottom: 10px;
+            border-bottom: 2px solid white;
+            margin-bottom: 10px;
+        }
+        .footer-lower{
+            background-color: #270082;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            color: white;
+        }
+        .gift-gard{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 60px;
+            background-color: white;
+        }
+        .gift-gard img{
+            width: 230px;
+            height: 230px;
+            mix-blend-mode: multiply;
+            background-color: white;
+        }
+        .ipad-iphon-img img{
+            display: flex;
+            border-radius: 70%;
+        }
+        .mac-img{
+            display: flex;
+            gap: 20px;
+          
+        }
+        .mac-img img{
+            display: flex;
+            border-radius: 10px;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">myTunes</div>
+            
+            <ul>
+                <a href="#hero">
+                    <li>Overview</li>
+                </a>
+                <a href="#music">
+                    <li>Music</li>
+                </a>
+                <a href="#video">
+                    <li>Video</li>  
+                </a>
+                <a href="#gift">
+                    <li>Gift Card</li>  
+                </a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero_section" id="hero">
+            <div class="container">
+                <h1>my Tunes</h1>
+                <h3>Your music, movies, and TV show take center stage.</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe vitae nostrum quam officia doloribus, sapiente veritatis aliquam - recusandae eveniet quia, vero quas error exercitationem distinctio officiis ex? Officiis, amet asperiores?</p>
+            </div>
+        </section>
+        <section class="music_section" id="music">
+            <div class="container">
+                <h2>
+                    <span><i class="fa-solid fa-music"></i></span>
+                    Music
+                </h2>
+                <h4>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat asperiores necessitatibus praesentium et magni animi culpa error, dicta itaque. Voluptas, vero veniam. Aliquam, earum qui in, blanditiis, quis dignissimos sint enim distinctio alias a pariatur vel aperiam voluptates ducimus corrupti explicabo suscipit similique modi quibusdam possimus quia dolorum accusantium reiciendis.
+                </h4>
+                <button class="primary-btn">
+                    Start Your Traile Now
+                </button>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto.</p>
+                <div class="ipad-iphon-img">
+                    <img src="music2.webp" alt="main">
+                </div>
+            </div>
+        </section>
+        <section class="adout-music container">
+            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, ut?</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id sed provident sunt ad natus commodi, atque nostrum cumque aperiam eum sint nam distinctio neque laudantium inventore quo. Itaque in nostrum accusamus hic? Ea maiores necessitatibus iure! Modi voluptatibus ab eveniet, facilis eius sapiente beatae aperiam debitis, commodi dolorem, atque necessitatibus.l  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut quia ratione accusamus, eligendi minima doloribus quae excepturi </p>
+            <button class="secondary-btn">Read more</button>
+            <div class="mac-img">
+                <img src="arijit sing.jpeg" alt="img1">
+                <img src="hindi song.jpeg" alt="img2">
+                <img src="sad song.jpeg" alt="img2">
+                <img src="bengali song.jpeg" alt="img2">
+            </div>
+        </section>
+        <section class="video-section" id="video">
+            <div class="container">
+                <video   controls poster="music 1.jpeg" width="1200px" height="1200px"  preload="metadata" muted loop >
+                    <source src="video3.mp4" >
+                </video>
+            </div>
+        </section>
+        <section class="gift-section " id="gift">
+            <div class="gift-gard">
+                <img src="Gift Card.jpeg" alt="music logo">
+            </div>
+            <div class="gift-content">
+                <h3>Gift Card</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt ab voluptates sapiente velit illo nesciunt itaque vitae, aperiam porro hic ut corruptirepellat alias ex beatae maxime provident animi esse assumenda impedit. Autem praesentium quisquam odio amet consequuntur dolore in fugit inventore, asperiores consequatur tempora maiores suscipit ad natus.</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+                <hr>
+                <div>
+                    <button class="secondary-btn">Redeem</button>
+                </div>
+            </div>
+        </section>
+        <div class="container">
+
+        </div>
+    </main>
+    <footer>
+        <section class="footer-upper">
+            <div class="container">
+                <div class="footer-links">
+                    <h4>Shop & learn</h4>
+                    <ul>
+                        <li>Music</li>
+                        <li>Movies</li>
+                        <li>Shows</li>
+                        <li>Apps</li>
+                        <li>Gift Cards</li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Orange Store</h4>
+                    <ul>
+                        <li>Find a Store</li>
+                        <li>Today at Orange</li>
+                        <li>Financing</li>
+                        <li>Orange Camp</li>
+                        <li>Order Status</li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Education & Business</h4>
+                    <ul>
+                        <li>Oraging Education</li>
+                        <li>Movies</li>
+                        <li>Shop for Business</li>
+                        <li>Jobs</li>
+                        <li>Apps jobs</li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>About Orange</h4>
+                    <ul>
+                        <li>New Store</li>
+                        <li>Movies</li>
+                        <li>Investors</li>
+                        <li>Apps</li>
+                        <li>Gift Cards</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="footer-lower">
+            <p>Copyright 2024 Do Some Coding...</p>
+        </section>
+    </footer>
+</body>
+</html>
